@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/webjobs</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">admin</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Update the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Show the queries prepared by Hibernate -->
+        <property name="show_sql">true</property>
+
+        <!-- Names the annotated entity classes -->
+        <mapping class="com.web.jobs.model.Test" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,10 +1,7 @@
 package com.web.jobs.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 public class Test {
@@ -17,6 +14,10 @@ public class Test {
     private String name;
 
     public Test() {
+    }
+
+    public Test(String name) {
+        this.name = name;
     }
 
     public Test(Integer id, String name) {

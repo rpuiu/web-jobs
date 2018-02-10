@@ -3,14 +3,14 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/webjobs</property>
-        <property name="connection.username">admin</property>
-        <property name="connection.password">admin</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQL55Dialect</property>
 
         <!-- Update the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <!-- Show the queries prepared by Hibernate -->
         <property name="show_sql">true</property>

@@ -16,6 +16,12 @@
         <property name="show_sql">true</property>
 
         <!-- Names the annotated entity classes -->
-        <mapping class="com.web.jobs.model.Test" />
+        <mapping class="com.web.jobs.model.Employee"/>
+        <mapping class="com.web.jobs.model.History"/>
+        <mapping class="com.web.jobs.model.Job"/>
+        <mapping class="com.web.jobs.model.Person"/>
+        <mapping class="com.web.jobs.model.Rating"/>
+        <mapping class="com.web.jobs.model.User"/>
+
     </session-factory>
 </hibernate-configuration>

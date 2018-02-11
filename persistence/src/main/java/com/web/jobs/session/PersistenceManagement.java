@@ -35,4 +35,13 @@ public class PersistenceManagement implements PersistenceDao {
         session.getTransaction().commit();
         session.close();
     }
+
+    public Object findById(Class clazz, Integer id) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        Object object =  session.get(clazz, id);
+        session.close();
+
+        return object;
+    }
 }

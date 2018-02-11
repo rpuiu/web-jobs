@@ -13,4 +13,12 @@ public class PersonService {
 
         personController.create(person);
     }
+
+    public void delete(Person person) {
+        personController.delete(person);
+    }
+
+    public Person findById(Integer id) {
+        return personController.findById(Person.class, id);
+    }
 }

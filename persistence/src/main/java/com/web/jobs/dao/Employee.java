@@ -6,7 +6,6 @@ import java.util.List;
 @Entity
 public class Employee implements EntityModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,7 +23,7 @@ public class Employee implements EntityModel {
 
 
     public Employee() {
-
+        // Default constructor
     }
 
     public Employee(Person person, Job job, List<Rating> ratings) {

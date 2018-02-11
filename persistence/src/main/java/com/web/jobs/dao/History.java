@@ -28,6 +28,7 @@ public class History implements EntityModel {
     private Long timestamp;
 
     public History() {
+        // Default constructor
     }
 
     public History(int userId, int jobId, int ratingId, int employeeId, Double price, Long timestamp) {

@@ -20,7 +20,6 @@ public class Employee {
     private Job job;
 
     @OneToMany(cascade = {CascadeType.ALL})
-//    @JoinColumn(name = "rating_id", unique = true)
     private List<Rating> ratings;
 
 

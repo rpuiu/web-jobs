@@ -17,7 +17,6 @@ public class User {
 
 
     @OneToMany(cascade = {CascadeType.ALL})
-//    @JoinColumn(name = "rating_id", unique = true)
     private List<Rating> rating;
 
 

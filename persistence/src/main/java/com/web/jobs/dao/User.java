@@ -1,10 +1,10 @@
-package com.web.jobs.model;
+package com.web.jobs.dao;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class User implements EntityModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

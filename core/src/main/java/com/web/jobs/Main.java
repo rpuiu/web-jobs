@@ -1,6 +1,10 @@
 package com.web.jobs;
 
-import com.web.jobs.model.*;
+import com.web.jobs.dao.Employee;
+import com.web.jobs.dao.Job;
+import com.web.jobs.dao.Person;
+import com.web.jobs.dao.Rating;
+import com.web.jobs.session.PersistenceManagement;
 import org.hibernate.Session;
 
 import java.util.Arrays;
@@ -8,7 +12,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Session session = com.web.jobs.session.Session.getSessionFactory().openSession();
+        Session session = PersistenceManagement.getSessionFactory().openSession();
 
         session.beginTransaction();
 

@@ -1,10 +1,10 @@
-package com.web.jobs.model;
+package com.web.jobs.dao;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Employee {
+public class Employee implements EntityModel {
 
 
     @Id

@@ -1,9 +1,11 @@
-package com.web.jobs.model;
+package com.web.jobs.dao;
+
+import com.web.jobs.model.PersonBuilder;
 
 import javax.persistence.*;
 
 @Entity
-public class Person {
+public class Person implements EntityModel {
 
 
     @Id
@@ -26,7 +28,7 @@ public class Person {
     private String phone;
 
     @Column
-    private String account;
+    private String bankAccount;
 
     @OneToOne(mappedBy = "person")
     private Employee employee;
@@ -36,15 +38,25 @@ public class Person {
 
 
     public Person() {
+
     }
 
-    public Person(String name, String surname, String username, String address, String phone, String account) {
+    public Person(PersonBuilder personBuilder) {
+        this.name = personBuilder.getName();
+        this.surname = personBuilder.getSurname();
+        this.username = personBuilder.getUsername();
+        this.address = personBuilder.getAddress();
+        this.phone = personBuilder.getPhone();
+        this.bankAccount = personBuilder.getBankAccount();
+    }
+
+    public Person(String name, String surname, String username, String address, String phone, String bankAccount) {
         this.name = name;
         this.surname = surname;
         this.username = username;
         this.address = address;
         this.phone = phone;
-        this.account = account;
+        this.bankAccount = bankAccount;
     }
 
     public Integer getId() {
@@ -71,7 +83,8 @@ public class Person {
         return phone;
     }
 
-    public String getAccount() {
-        return account;
+    public String getBankAccount() {
+        return bankAccount;
     }
+
 }

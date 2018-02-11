@@ -1,9 +1,9 @@
-package com.web.jobs.model;
+package com.web.jobs.dao;
 
 import javax.persistence.*;
 
 @Entity
-public class Rating {
+public class Rating implements EntityModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

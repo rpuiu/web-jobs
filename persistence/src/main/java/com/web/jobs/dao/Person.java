@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 public class Person implements EntityModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -38,7 +37,7 @@ public class Person implements EntityModel {
 
 
     public Person() {
-
+        // Default constructor
     }
 
     public Person(PersonBuilder personBuilder) {

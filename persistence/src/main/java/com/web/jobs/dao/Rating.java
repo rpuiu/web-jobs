@@ -21,13 +21,11 @@ public class Rating implements EntityModel {
     @ManyToOne
     private User user;
 
-
-
     public Rating() {
+        // Default constructor
     }
 
     public Rating(Double score, String message) {
-
         this.score = score;
         this.message = message;
     }

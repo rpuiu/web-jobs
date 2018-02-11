@@ -25,14 +25,15 @@ public class Job implements EntityModel {
     private Employee employee;
 
 
+    public Job() {
+        // Default constructor
+    }
+
     public Job(String jobTitle, String description, String category, Double fare) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.category = category;
         this.fare = fare;
-    }
-
-    public Job() {
     }
 
     public String getJobTitle() {

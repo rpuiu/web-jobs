@@ -29,7 +29,9 @@ public class History implements EntityModel {
     @Column
     private Long timestamp;
 
-    public History(){}
+    public History() {
+        // Default constructor
+    }
 
     public History(HistoryBuilder hb) {
         this.userId = hb.getUserId();

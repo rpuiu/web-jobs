@@ -8,8 +8,15 @@ public class PersonService {
 
     private PersonController personController;
 
-    public void insert(String name, String phone) {
-        Person person = new PersonBuilder().withName(name).build();
+    public void insert(String name, String surname, String username, String address, String phone, String bankAccount) {
+        Person person = new PersonBuilder()
+                .withName(name)
+                .withSurame(surname)
+                .withUsername(username)
+                .withAddress(address)
+                .withPhone(phone)
+                .withBankAccount(bankAccount)
+                .build();
 
         personController.create(person);
     }

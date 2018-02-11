@@ -1,5 +1,7 @@
 package com.web.jobs.dao;
 
+import com.web.jobs.model.HistoryBuilder;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,16 +29,15 @@ public class History implements EntityModel {
     @Column
     private Long timestamp;
 
-    public History() {
-    }
+    public History(){}
 
-    public History(int userId, int jobId, int ratingId, int employeeId, Double price, Long timestamp) {
-        this.userId = userId;
-        this.jobId = jobId;
-        this.ratingId = ratingId;
-        this.employeeId = employeeId;
-        this.price = price;
-        this.timestamp = timestamp;
+    public History(HistoryBuilder hb) {
+        this.userId = hb.getUserId();
+        this.jobId = hb.getJobId();
+        this.ratingId = hb.getRatingId();
+        this.employeeId = hb.getEmployeeId();
+        this.price = hb.getPrice();
+        this.timestamp = hb.getTimestamp();
     }
 
     public int getUserId() {

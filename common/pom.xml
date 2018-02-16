@@ -10,10 +10,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>web-jobs-persistence</artifactId>
+    <artifactId>web-jobs-common</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Web Jobs Persistence</name>
+    <name>Web Jobs Common</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -21,15 +21,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

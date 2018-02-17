@@ -16,7 +16,7 @@
         <property name="show_sql">true</property>
 
         <!-- Names the annotated entity classes -->
-        <mapping class="com.web.jobs.persistence.dto.Employee"/>
+        <mapping class="com.web.jobs.persistence.dto.EmployeeDTO"/>
         <mapping class="com.web.jobs.persistence.dto.HistoryDTO"/>
         <mapping class="com.web.jobs.persistence.dto.JobDTO"/>
         <mapping class="com.web.jobs.persistence.dto.PersonDTO"/>

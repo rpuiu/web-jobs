@@ -3,9 +3,13 @@ package com.web.jobs.core.service;
 import com.web.jobs.core.controller.UserController;
 import com.web.jobs.persistence.dto.PersonDTO;
 import com.web.jobs.persistence.dto.UserDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
 
+    @Autowired
     private UserController userController;
 
     public void insert(PersonDTO person, String bankAccount) {

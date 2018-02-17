@@ -30,7 +30,7 @@ public class HibernateTransaction implements PersistenceDTO {
         }
     }
 
-    public SessionFactory getSessionFactory() {
+    private SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 

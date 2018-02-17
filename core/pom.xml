@@ -23,6 +23,12 @@
     <dependencies>
         <dependency>
             <groupId>com.webjobs</groupId>
+            <artifactId>web-jobs-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.webjobs</groupId>
             <artifactId>web-jobs-persistence</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -38,6 +44,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
@@ -47,5 +58,15 @@
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

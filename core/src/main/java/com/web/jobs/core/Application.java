@@ -6,13 +6,20 @@ import com.web.jobs.persistence.dto.PersonDTO;
 import com.web.jobs.persistence.dto.RatingDTO;
 import com.web.jobs.persistence.session.HibernateTransaction;
 import org.hibernate.Session;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
 import java.util.Collections;
 
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+    public void testApp() {
         Session session = HibernateTransaction.getSessionFactory().openSession();
 
         session.beginTransaction();

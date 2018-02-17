@@ -21,6 +21,8 @@
 
         <hibernate.core.version>5.2.13.Final</hibernate.core.version>
         <mysql.connector.version>6.0.6</mysql.connector.version>
+        <spring.boot.starter.version>1.5.9.RELEASE</spring.boot.starter.version>
+        <spring.boot.plugin.version>1.5.9.RELEASE</spring.boot.plugin.version>
         <slf4j.api.version>1.7.5</slf4j.api.version>
         <slf4j.log4j12.version>1.7.5</slf4j.log4j12.version>
     </properties>
@@ -37,6 +39,18 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.starter.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>

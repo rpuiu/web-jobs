@@ -1,5 +1,9 @@
 package com.web.jobs.persistence.dto;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,6 +23,7 @@ public class EmployeeDTO implements EntityDTO {
     private JobDTO jobDTO;
 
     @OneToMany(cascade = {CascadeType.ALL})
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<RatingDTO> ratingDTO;
 
 

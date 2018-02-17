@@ -1,8 +1,12 @@
 package com.web.jobs.persistence.dto;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +28,7 @@ public class UserDTO implements EntityDTO {
     private PersonDTO personDTO;
 
     @OneToMany(cascade = {CascadeType.ALL})
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<RatingDTO> ratingDTO = new ArrayList<>();
 
     @Column

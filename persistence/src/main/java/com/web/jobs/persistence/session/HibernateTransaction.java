@@ -9,6 +9,8 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateTransaction implements PersistenceDTO {
 
+    private static HibernateTransaction INSTANCE = null;
+
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
@@ -16,7 +18,19 @@ public class HibernateTransaction implements PersistenceDTO {
         return new MetadataSources(registry).buildMetadata().buildSessionFactory();
     }
 
-    public static SessionFactory getSessionFactory() {
+    private HibernateTransaction() {
+        // Default constructor
+    }
+
+    public static HibernateTransaction getHibernateTransaction() {
+        if (INSTANCE == null) {
+            return new HibernateTransaction();
+        } else {
+            return INSTANCE;
+        }
+    }
+
+    public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 

@@ -10,7 +10,7 @@
         <property name="dialect">org.hibernate.dialect.MySQL55Dialect</property>
 
         <!-- Update the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <!-- Show the queries prepared by Hibernate -->
         <property name="show_sql">true</property>

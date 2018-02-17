@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "User")
 public class UserDTO implements EntityDTO {
 
     @Id
@@ -21,7 +21,7 @@ public class UserDTO implements EntityDTO {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "person_id", unique = true)
-    private PersonDTO person;
+    private PersonDTO personDTO;
 
     @OneToMany(cascade = {CascadeType.ALL})
     private List<RatingDTO> ratingDTO = new ArrayList<>();
@@ -33,13 +33,13 @@ public class UserDTO implements EntityDTO {
         // Default constructor
     }
 
-    public UserDTO(PersonDTO person, String bankAccount) {
-        this.person = person;
+    public UserDTO(PersonDTO personDTO, String bankAccount) {
+        this.personDTO = personDTO;
         this.bankAccount = bankAccount;
     }
 
-    public PersonDTO getPerson() {
-        return person;
+    public PersonDTO getPersonDTO() {
+        return personDTO;
     }
 
     public List<RatingDTO> getRatingDTO() {

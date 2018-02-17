@@ -3,7 +3,7 @@ package com.web.jobs.persistence.dto;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "Employee")
 public class EmployeeDTO implements EntityDTO {
 
     @Id
@@ -12,36 +12,36 @@ public class EmployeeDTO implements EntityDTO {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "person_id", unique = true)
-    private PersonDTO person;
+    private PersonDTO personDTO;
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "job_id", unique = true)
     private JobDTO jobDTO;
 
     @OneToMany(cascade = {CascadeType.ALL})
-    private List<RatingDTO> ratingDTOS;
+    private List<RatingDTO> ratingDTO;
 
 
     public EmployeeDTO() {
         // Default constructor
     }
 
-    public EmployeeDTO(PersonDTO person, JobDTO jobDTO, List<RatingDTO> ratingDTOS) {
-        this.person = person;
+    public EmployeeDTO(PersonDTO personDTO, JobDTO jobDTO, List<RatingDTO> ratingDTO) {
+        this.personDTO = personDTO;
         this.jobDTO = jobDTO;
-        this.ratingDTOS = ratingDTOS;
+        this.ratingDTO = ratingDTO;
     }
 
-    public PersonDTO getPerson() {
-        return person;
+    public PersonDTO getPersonDTO() {
+        return personDTO;
     }
 
     public JobDTO getJobDTO() {
         return jobDTO;
     }
 
-    public List<RatingDTO> getRatingDTOS() {
-        return ratingDTOS;
+    public List<RatingDTO> getRatingDTO() {
+        return ratingDTO;
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.web.jobs.persistence.dto;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Job")
 public class JobDTO implements EntityDTO {
 
     @Id

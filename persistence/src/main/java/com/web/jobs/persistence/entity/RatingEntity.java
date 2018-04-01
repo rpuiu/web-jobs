@@ -1,9 +1,9 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
 import javax.persistence.*;
 
-@Entity(name = "Rating")
-public class RatingDTO implements EntityDTO {
+@javax.persistence.Entity(name = "Rating")
+public class RatingEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,16 +16,16 @@ public class RatingDTO implements EntityDTO {
     private String message;
 
     @ManyToOne
-    private EmployeeDTO employeeDTO;
+    private EmployeeEntity employeeEntity;
 
     @ManyToOne
-    private UserDTO userDTO;
+    private UserEntity userEntity;
 
-    public RatingDTO() {
+    public RatingEntity() {
         // Default constructor
     }
 
-    public RatingDTO(Double score, String message) {
+    public RatingEntity(Double score, String message) {
         this.score = score;
         this.message = message;
     }

@@ -1,14 +1,13 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "Employee")
-public class EmployeeDTO implements EntityDTO {
+@javax.persistence.Entity(name = "Employee")
+public class EmployeeEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,37 +15,37 @@ public class EmployeeDTO implements EntityDTO {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "person_id", unique = true)
-    private PersonDTO personDTO;
+    private PersonEntity personEntity;
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "job_id", unique = true)
-    private JobDTO jobDTO;
+    private JobEntity jobEntity;
 
     @OneToMany(cascade = {CascadeType.ALL})
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<RatingDTO> ratingDTO;
+    private List<RatingEntity> ratingEntity;
 
 
-    public EmployeeDTO() {
+    public EmployeeEntity() {
         // Default constructor
     }
 
-    public EmployeeDTO(PersonDTO personDTO, JobDTO jobDTO, List<RatingDTO> ratingDTO) {
-        this.personDTO = personDTO;
-        this.jobDTO = jobDTO;
-        this.ratingDTO = ratingDTO;
+    public EmployeeEntity(PersonEntity personEntity, JobEntity jobEntity, List<RatingEntity> ratingEntity) {
+        this.personEntity = personEntity;
+        this.jobEntity = jobEntity;
+        this.ratingEntity = ratingEntity;
     }
 
-    public PersonDTO getPersonDTO() {
-        return personDTO;
+    public PersonEntity getPersonEntity() {
+        return personEntity;
     }
 
-    public JobDTO getJobDTO() {
-        return jobDTO;
+    public JobEntity getJobEntity() {
+        return jobEntity;
     }
 
-    public List<RatingDTO> getRatingDTO() {
-        return ratingDTO;
+    public List<RatingEntity> getRatingEntity() {
+        return ratingEntity;
     }
 
     @Override

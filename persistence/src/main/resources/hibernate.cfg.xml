@@ -16,12 +16,12 @@
         <property name="show_sql">true</property>
 
         <!-- Names the annotated entity classes -->
-        <mapping class="com.web.jobs.persistence.dto.EmployeeDTO"/>
-        <mapping class="com.web.jobs.persistence.dto.HistoryDTO"/>
-        <mapping class="com.web.jobs.persistence.dto.JobDTO"/>
-        <mapping class="com.web.jobs.persistence.dto.PersonDTO"/>
-        <mapping class="com.web.jobs.persistence.dto.RatingDTO"/>
-        <mapping class="com.web.jobs.persistence.dto.UserDTO"/>
+        <mapping class="com.web.jobs.persistence.entity.EmployeeEntity"/>
+        <mapping class="com.web.jobs.persistence.entity.HistoryEntity"/>
+        <mapping class="com.web.jobs.persistence.entity.JobEntity"/>
+        <mapping class="com.web.jobs.persistence.entity.PersonEntity"/>
+        <mapping class="com.web.jobs.persistence.entity.RatingEntity"/>
+        <mapping class="com.web.jobs.persistence.entity.UserEntity"/>
 
     </session-factory>
 </hibernate-configuration>

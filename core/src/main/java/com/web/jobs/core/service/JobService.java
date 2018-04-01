@@ -1,7 +1,7 @@
 package com.web.jobs.core.service;
 
 import com.web.jobs.core.controller.JobController;
-import com.web.jobs.persistence.dto.JobDTO;
+import com.web.jobs.persistence.entity.JobEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +12,15 @@ public class JobService {
     private JobController jobController;
 
     public void insert(String jobTitle, String description, String category, Double fare) {
-        JobDTO jobDTO = new JobDTO(jobTitle, description, category, fare);
-        jobController.create(jobDTO);
+        JobEntity jobEntity = new JobEntity(jobTitle, description, category, fare);
+        jobController.create(jobEntity);
     }
 
-    public void delete(JobDTO jobDTO){
-        jobController.delete(jobDTO);
+    public void delete(JobEntity jobEntity){
+        jobController.delete(jobEntity);
     }
 
-    public JobDTO findById(Long id){
-        return jobController.findById(JobDTO.class, id);
+    public JobEntity findById(Long id){
+        return jobController.findById(JobEntity.class, id);
     }
 }

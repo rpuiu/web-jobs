@@ -1,16 +1,15 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
 import com.web.jobs.persistence.model.PersonBuilder;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Entity(name = "Person")
-public class PersonDTO implements EntityDTO {
+@javax.persistence.Entity(name = "Person")
+public class PersonEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,18 +33,18 @@ public class PersonDTO implements EntityDTO {
     @Column
     private String bankAccount;
 
-    @OneToOne(mappedBy = "personDTO")
-    private EmployeeDTO employeeDTO;
+    @OneToOne(mappedBy = "personEntity")
+    private EmployeeEntity employeeEntity;
 
-    @OneToOne(mappedBy = "personDTO")
-    private UserDTO userDTO;
+    @OneToOne(mappedBy = "personEntity")
+    private UserEntity userEntity;
 
 
-    public PersonDTO() {
+    public PersonEntity() {
         // Default constructor
     }
 
-    public PersonDTO(PersonBuilder personBuilder) {
+    public PersonEntity(PersonBuilder personBuilder) {
         this.name = personBuilder.getName();
         this.surname = personBuilder.getSurname();
         this.username = personBuilder.getUsername();
@@ -54,7 +53,7 @@ public class PersonDTO implements EntityDTO {
         this.bankAccount = personBuilder.getBankAccount();
     }
 
-    public PersonDTO(String name, String surname, String username, String address, String phone, String bankAccount) {
+    public PersonEntity(String name, String surname, String username, String address, String phone, String bankAccount) {
         this.name = name;
         this.surname = surname;
         this.username = username;

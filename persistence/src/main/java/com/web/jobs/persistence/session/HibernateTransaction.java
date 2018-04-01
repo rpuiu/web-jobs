@@ -1,13 +1,13 @@
 package com.web.jobs.persistence.session;
 
-import com.web.jobs.persistence.dto.EntityDTO;
+import com.web.jobs.persistence.entity.Entity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-public class HibernateTransaction implements PersistenceDTO {
+public class HibernateTransaction implements PersistenceEntity {
 
     private static HibernateTransaction INSTANCE = null;
 
@@ -35,19 +35,19 @@ public class HibernateTransaction implements PersistenceDTO {
     }
 
     @Override
-    public void insert(EntityDTO EntityDTO) {
+    public void insert(Entity Entity) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(EntityDTO);
+        session.save(Entity);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void delete(EntityDTO EntityDTO) {
+    public void delete(Entity Entity) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(EntityDTO);
+        session.delete(Entity);
         session.getTransaction().commit();
         session.close();
     }

@@ -1,12 +1,10 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,8 +14,8 @@ import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "User")
-public class UserDTO implements EntityDTO {
+@javax.persistence.Entity(name = "User")
+public class UserEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,30 +23,30 @@ public class UserDTO implements EntityDTO {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "person_id", unique = true)
-    private PersonDTO personDTO;
+    private PersonEntity personEntity;
 
     @OneToMany(cascade = {CascadeType.ALL})
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<RatingDTO> ratingDTO = new ArrayList<>();
+    private List<RatingEntity> ratingEntity = new ArrayList<>();
 
     @Column
     private String bankAccount;
 
-    public UserDTO() {
+    public UserEntity() {
         // Default constructor
     }
 
-    public UserDTO(PersonDTO personDTO, String bankAccount) {
-        this.personDTO = personDTO;
+    public UserEntity(PersonEntity personEntity, String bankAccount) {
+        this.personEntity = personEntity;
         this.bankAccount = bankAccount;
     }
 
-    public PersonDTO getPersonDTO() {
-        return personDTO;
+    public PersonEntity getPersonEntity() {
+        return personEntity;
     }
 
-    public List<RatingDTO> getRatingDTO() {
-        return ratingDTO;
+    public List<RatingEntity> getRatingEntity() {
+        return ratingEntity;
     }
 
     public String getBankAccount() {

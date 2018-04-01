@@ -1,9 +1,9 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
 import javax.persistence.*;
 
-@Entity(name = "Job")
-public class JobDTO implements EntityDTO {
+@javax.persistence.Entity(name = "Job")
+public class JobEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,15 +21,15 @@ public class JobDTO implements EntityDTO {
     @Column
     private Double fare;
 
-    @OneToOne(mappedBy = "jobDTO")
-    private EmployeeDTO employeeDTO;
+    @OneToOne(mappedBy = "jobEntity")
+    private EmployeeEntity employeeEntity;
 
 
-    public JobDTO() {
+    public JobEntity() {
         // Default constructor
     }
 
-    public JobDTO(String jobTitle, String description, String category, Double fare) {
+    public JobEntity(String jobTitle, String description, String category, Double fare) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.category = category;

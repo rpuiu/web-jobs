@@ -1,6 +1,6 @@
 package com.web.jobs.persistence.model;
 
-import com.web.jobs.persistence.dto.PersonDTO;
+import com.web.jobs.persistence.entity.PersonEntity;
 
 public class PersonBuilder {
 
@@ -45,8 +45,8 @@ public class PersonBuilder {
         return this;
     }
 
-    public PersonDTO build() {
-        return new PersonDTO(this);
+    public PersonEntity build() {
+        return new PersonEntity(this);
     }
 
     public String getName() {

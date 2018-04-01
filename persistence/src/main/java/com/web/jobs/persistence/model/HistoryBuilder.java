@@ -1,7 +1,7 @@
 package com.web.jobs.persistence.model;
 
 
-import com.web.jobs.persistence.dto.HistoryDTO;
+import com.web.jobs.persistence.entity.HistoryEntity;
 
 public class HistoryBuilder {
 
@@ -16,8 +16,8 @@ public class HistoryBuilder {
         // Default constructor
     }
 
-    public HistoryDTO build(){
-        return new HistoryDTO(this);
+    public HistoryEntity build(){
+        return new HistoryEntity(this);
     }
 
     public Long getUserId() {

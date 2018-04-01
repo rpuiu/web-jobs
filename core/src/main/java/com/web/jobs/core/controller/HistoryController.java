@@ -1,26 +1,26 @@
 package com.web.jobs.core.controller;
 
-import com.web.jobs.persistence.dto.HistoryDTO;
+import com.web.jobs.persistence.entity.HistoryEntity;
 import com.web.jobs.persistence.session.HibernateTransaction;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class HistoryController implements EntityController<HistoryDTO> {
+public class HistoryController implements EntityController<HistoryEntity> {
 
     private HibernateTransaction hibernateTransaction = HibernateTransaction.getHibernateTransaction();
 
     @Override
-    public void create(HistoryDTO model) {
+    public void create(HistoryEntity model) {
         hibernateTransaction.insert(model);
     }
 
     @Override
-    public void delete(HistoryDTO model) {
+    public void delete(HistoryEntity model) {
         hibernateTransaction.delete(model);
     }
 
     @Override
-    public HistoryDTO findById(Class<HistoryDTO> clazz, Long id) {
-        return (HistoryDTO) hibernateTransaction.findById(clazz, id);
+    public HistoryEntity findById(Class<HistoryEntity> clazz, Long id) {
+        return (HistoryEntity) hibernateTransaction.findById(clazz, id);
     }
 }

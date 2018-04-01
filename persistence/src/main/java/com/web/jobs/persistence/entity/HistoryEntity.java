@@ -1,15 +1,14 @@
-package com.web.jobs.persistence.dto;
+package com.web.jobs.persistence.entity;
 
 import com.web.jobs.persistence.model.HistoryBuilder;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "History")
-public class HistoryDTO implements EntityDTO {
+@javax.persistence.Entity(name = "History")
+public class HistoryEntity implements Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +32,11 @@ public class HistoryDTO implements EntityDTO {
     @Column
     private Long timestamp;
 
-    public HistoryDTO() {
+    public HistoryEntity() {
         // Default constructor
     }
 
-    public HistoryDTO(HistoryBuilder hb) {
+    public HistoryEntity(HistoryBuilder hb) {
         this.userId = hb.getUserId();
         this.jobId = hb.getJobId();
         this.ratingId = hb.getRatingId();

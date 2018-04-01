@@ -1,7 +1,7 @@
 package com.web.jobs.core.service;
 
 import com.web.jobs.core.controller.HistoryController;
-import com.web.jobs.persistence.dto.HistoryDTO;
+import com.web.jobs.persistence.entity.HistoryEntity;
 import com.web.jobs.persistence.model.HistoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class HistoryService {
     private HistoryController historyController;
 
     public void insert(Long userId, Long jobId, Long ratingId, Long employeeId, Double price, Long timestamp) {
-       HistoryDTO historyDTO = new HistoryBuilder()
+       HistoryEntity historyEntity = new HistoryBuilder()
                .withUserId(userId)
                .withJobId(jobId)
                .withRatingId(ratingId)
@@ -21,14 +21,14 @@ public class HistoryService {
                .withPrice(price)
                .withTimestamp(timestamp)
            .build();
-        historyController.create(historyDTO);
+        historyController.create(historyEntity);
     }
 
-    public void delete(HistoryDTO historyDTO){
-        historyController.delete(historyDTO);
+    public void delete(HistoryEntity historyEntity){
+        historyController.delete(historyEntity);
     }
 
-    public HistoryDTO findById(Long id){
-        return historyController.findById(HistoryDTO.class, id);
+    public HistoryEntity findById(Long id){
+        return historyController.findById(HistoryEntity.class, id);
     }
 }

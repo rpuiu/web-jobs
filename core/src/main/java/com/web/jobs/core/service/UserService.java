@@ -1,8 +1,8 @@
 package com.web.jobs.core.service;
 
 import com.web.jobs.core.controller.UserController;
-import com.web.jobs.persistence.dto.PersonDTO;
-import com.web.jobs.persistence.dto.UserDTO;
+import com.web.jobs.persistence.entity.PersonEntity;
+import com.web.jobs.persistence.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +12,16 @@ public class UserService {
     @Autowired
     private UserController userController;
 
-    public void insert(PersonDTO person, String bankAccount) {
-        UserDTO userDTO = new UserDTO(person, bankAccount);
-        userController.create(userDTO);
+    public void insert(PersonEntity person, String bankAccount) {
+        UserEntity userEntity = new UserEntity(person, bankAccount);
+        userController.create(userEntity);
     }
 
-    public void delete(UserDTO userDTO) {
-        userController.delete(userDTO);
+    public void delete(UserEntity userEntity) {
+        userController.delete(userEntity);
     }
 
-    public UserDTO findById(Long id) {
-        return userController.findById(UserDTO.class, id);
+    public UserEntity findById(Long id) {
+        return userController.findById(UserEntity.class, id);
     }
 }

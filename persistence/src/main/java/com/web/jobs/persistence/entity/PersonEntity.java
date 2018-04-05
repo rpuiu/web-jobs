@@ -3,13 +3,14 @@ package com.web.jobs.persistence.entity;
 import com.web.jobs.persistence.model.PersonBuilder;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@javax.persistence.Entity(name = "Person")
-public class PersonEntity implements Entity {
+@Entity(name = "Person")
+public class PersonEntity implements DbEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

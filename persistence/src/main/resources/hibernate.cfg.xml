@@ -15,7 +15,7 @@
         <!-- Show the queries prepared by Hibernate -->
         <property name="show_sql">true</property>
 
-        <!-- Names the annotated entity classes -->
+        <!-- Names the annotated Entity classes -->
         <mapping class="com.web.jobs.persistence.entity.EmployeeEntity"/>
         <mapping class="com.web.jobs.persistence.entity.HistoryEntity"/>
         <mapping class="com.web.jobs.persistence.entity.JobEntity"/>

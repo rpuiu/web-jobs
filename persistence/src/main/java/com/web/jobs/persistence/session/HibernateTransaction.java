@@ -1,6 +1,6 @@
 package com.web.jobs.persistence.session;
 
-import com.web.jobs.persistence.entity.Entity;
+import com.web.jobs.persistence.entity.DbEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -35,19 +35,19 @@ public class HibernateTransaction implements PersistenceEntity {
     }
 
     @Override
-    public void insert(Entity Entity) {
+    public void insert(DbEntity dbEntity) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(Entity);
+        session.save(dbEntity);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void delete(Entity Entity) {
+    public void delete(DbEntity dbEntity) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(Entity);
+        session.delete(dbEntity);
         session.getTransaction().commit();
         session.close();
     }

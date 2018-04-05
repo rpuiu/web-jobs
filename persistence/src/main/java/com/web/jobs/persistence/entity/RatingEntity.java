@@ -1,9 +1,14 @@
 package com.web.jobs.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-@javax.persistence.Entity(name = "Rating")
-public class RatingEntity implements Entity {
+@Entity(name = "Rating")
+public class RatingEntity implements DbEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

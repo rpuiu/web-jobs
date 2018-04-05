@@ -6,8 +6,8 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.util.List;
 
-@javax.persistence.Entity(name = "Employee")
-public class EmployeeEntity implements Entity {
+@Entity(name = "Employee")
+public class EmployeeEntity implements DbEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

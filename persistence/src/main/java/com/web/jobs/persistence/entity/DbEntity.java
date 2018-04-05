@@ -2,7 +2,7 @@ package com.web.jobs.persistence.entity;
 
 import java.io.Serializable;
 
-public interface Entity extends Serializable {
+public interface DbEntity extends Serializable {
 
     Long getId();
 

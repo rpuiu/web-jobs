@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/wj/employee")
+@RequestMapping("wj/employee")
 public class EmployeeRestController {
 
+    private final EmployeeService employeeService;
+
     @Autowired
-    private EmployeeService employeeService;
+    public EmployeeRestController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @GetMapping("test")
     public ResponseEntity<EmployeeEntity> getById() {

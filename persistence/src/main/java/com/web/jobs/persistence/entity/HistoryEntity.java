@@ -3,12 +3,13 @@ package com.web.jobs.persistence.entity;
 import com.web.jobs.persistence.model.HistoryBuilder;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@javax.persistence.Entity(name = "History")
-public class HistoryEntity implements Entity {
+@Entity(name = "History")
+public class HistoryEntity implements DbEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

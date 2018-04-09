@@ -4,12 +4,10 @@ import com.web.jobs.core.service.HistoryService;
 import com.web.jobs.persistence.entity.HistoryEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping
@@ -37,10 +35,10 @@ public class HistoryRestController {
     }
     
     @GetMapping(value = "/history")
-    public ResponseEntity getAll() {
+    public List<HistoryEntity> getAll() {
         HistoryEntity historyById = historyService.findById(1L);
-
-        return ResponseEntity.ok(historyById);
+        HistoryEntity historyEntity2 = historyService.findById(2L);
+        return Arrays.asList(historyById, historyEntity2);
     }
 
 }

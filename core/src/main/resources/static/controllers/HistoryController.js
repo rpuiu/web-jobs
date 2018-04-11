@@ -8,6 +8,8 @@
     HistoryController.$inject = ['$http'];
 
  function HistoryController ($http){
+    console.log("asada");
+    
     var vm = this;
 
     vm.history = [];

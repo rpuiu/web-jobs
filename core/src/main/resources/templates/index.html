@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Web Jobs</title>
 
-    <script type="text/javascript" src="static/lib/angular.min.js" th:src="@{/lib/angular.min.js}"></script>
-    <script type="text/javascript" src="static/lib/angular.route.js" th:src="@{/lib/angular.route.js}"></script>
+    <!--<script type="text/javascript" src="static/lib/angular.min.js" th:src="@{/lib/angular.min.js}"></script>-->
+    <!--<script type="text/javascript" src="static/lib/angular.route.js" th:src="@{/lib/angular.route.js}"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script type="text/javascript" src="static/app.js" th:src="@{/app.js}"></script>
     <script type="text/javascript" src="static/controllers/HistoryController.js" th:src="@{/controllers/HistoryController.js}"></script>
     <script type="text/javascript" src="static/controllers/MainController.js" th:src="@{/controllers/MainController.js}"></script>
@@ -15,29 +17,13 @@
 <body ng-app="app">
 <a href = "#/test">HOME</a>
 <a href = "#/history">HISTORY</a>
+
+<a href="#!red">Red</a>
+<a href="#!green">Green</a>
+
+
 <h2>Administrator Panel</h2>
-<div class="btn-group" role="group">
-    <button ng-click="vm.getAll()" type="button" class="btn btn-default">All</button>
-</div>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>Hotel</th>
-            <th>Nights</th>
-            <th>Price/Night</th>
-            <th>Total Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="hist in vm.history">
-            <td>{{hist.id}}</td>
-            <td>{{hist.userId}}</td>
-            <td>{{hist.ratingId}}</td>
-            <td>{{hist.price}}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+
+<div ng-view=""></div>
 </body>
 </html>

@@ -7,16 +7,16 @@
         <!-- AngularJS dependencies -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+        <script type="text/javascript">
+            angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+        </script>
         
         <!-- JavaScript components -->
         <script type="text/javascript" src="static/app.js" th:src="@{/app.js}"></script>
         <script type="text/javascript" src="static/controllers/HomeController.js" th:src="@{/controllers/HomeController.js}"></script>
         <script type="text/javascript" src="static/controllers/UserController.js" th:src="@{/controllers/UserController.js}"></script>
         <script type="text/javascript" src="static/controllers/HistoryController.js" th:src="@{/controllers/HistoryController.js}"></script>
-    
-        <script type="text/javascript">
-            angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-        </script>
     </head>
 
     <body ng-app="app">

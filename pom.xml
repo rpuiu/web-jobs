@@ -29,9 +29,7 @@
 
         <hibernate.core.version>5.2.13.Final</hibernate.core.version>
         <mysql.connector.version>6.0.6</mysql.connector.version>
-        <spring.boot.starter.version>1.5.9.RELEASE</spring.boot.starter.version>
-        <spring.boot.plugin.version>1.5.9.RELEASE</spring.boot.plugin.version>
-        <angularjs.version>1.4.9</angularjs.version>
+        <spring.boot.version>1.5.9.RELEASE</spring.boot.version>
         <slf4j.api.version>1.7.5</slf4j.api.version>
         <slf4j.log4j12.version>1.7.5</slf4j.log4j12.version>
     </properties>
@@ -53,7 +51,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring.boot.starter.version}</version>
+                <version>${spring.boot.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework.boot</groupId>
@@ -65,9 +63,8 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                <version>${spring.boot.starter.version}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
-
 
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -86,8 +83,6 @@
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf4j.api.version}</version>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
 

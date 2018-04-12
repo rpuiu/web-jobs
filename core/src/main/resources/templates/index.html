@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Web Jobs</title>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Web Jobs</title>
+    
+        <!-- AngularJS dependencies -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        
+        <!-- JavaScript components -->
+        <script type="text/javascript" src="static/app.js" th:src="@{/app.js}"></script>
+        <script type="text/javascript" src="static/controllers/HomeController.js" th:src="@{/controllers/HomeController.js}"></script>
+        <script type="text/javascript" src="static/controllers/UserController.js" th:src="@{/controllers/UserController.js}"></script>
+        <script type="text/javascript" src="static/controllers/HistoryController.js" th:src="@{/controllers/HistoryController.js}"></script>
+    
+        <script type="text/javascript">
+            angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+        </script>
+    </head>
 
-    <!--<script type="text/javascript" src="static/lib/angular.min.js" th:src="@{/lib/angular.min.js}"></script>-->
-    <!--<script type="text/javascript" src="static/lib/angular.route.js" th:src="@{/lib/angular.route.js}"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script type="text/javascript" src="static/app.js" th:src="@{/app.js}"></script>
-    <script type="text/javascript" src="static/controllers/HistoryController.js" th:src="@{/controllers/HistoryController.js}"></script>
-    <script type="text/javascript" src="static/controllers/MainController.js" th:src="@{/controllers/MainController.js}"></script>
-</head>
-
-<body ng-app="app">
-<a href = "#/test">HOME</a>
-<a href = "#/history">HISTORY</a>
-
-<a href="#!red">Red</a>
-<a href="#!green">Green</a>
-
-
-<h2>Administrator Panel</h2>
-
-<div ng-view=""></div>
-</body>
+    <body ng-app="app">
+        <!-- HEADER -->
+        <a href="/">HOME PAGE</a>
+        <a href="/user">USER</a>
+        <a href="/history">HISTORY</a>
+        
+        <div ng-view="">
+            <!-- Single page application -->
+        </div>
+    </body>
 </html>

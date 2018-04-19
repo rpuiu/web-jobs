@@ -20,7 +20,7 @@
         }
         
         function getAll() {
-            var url = '/history';
+            var url = '/api/history';
             console.log("here");
             var historyPromise = $http.get(url);
             historyPromise.then(function(response){

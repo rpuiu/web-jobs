@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("wj/employee")
+@RequestMapping("/api")
 public class EmployeeRestController {
 
     private final EmployeeService employeeService;
@@ -19,7 +19,7 @@ public class EmployeeRestController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("test")
+    @GetMapping("/employee")
     public ResponseEntity<EmployeeEntity> getById() {
         EmployeeEntity employeeEntity = employeeService.findById(1L);
 

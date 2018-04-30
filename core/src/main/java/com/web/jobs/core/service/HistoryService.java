@@ -6,6 +6,8 @@ import com.web.jobs.persistence.model.HistoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HistoryService {
 
@@ -30,5 +32,9 @@ public class HistoryService {
 
     public HistoryEntity findById(Long id){
         return historyController.findById(HistoryEntity.class, id);
+    }
+
+    public List<HistoryEntity> getAll() {
+        return historyController.getAll(HistoryEntity.class);
     }
 }

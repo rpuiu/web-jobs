@@ -28,4 +28,8 @@ public class EmployeeService {
     public EmployeeEntity findById(Long id){
         return employeeController.findById(EmployeeEntity.class, id);
     }
+
+    public List<EmployeeEntity> getAll() {
+        return employeeController.getAll(EmployeeEntity.class);
+    }
 }

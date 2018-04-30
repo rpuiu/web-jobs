@@ -4,6 +4,8 @@ import com.web.jobs.persistence.entity.EmployeeEntity;
 import com.web.jobs.persistence.session.HibernateTransaction;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+
 @Controller
 public class EmployeeController implements EntityController<EmployeeEntity> {
 
@@ -23,5 +25,10 @@ public class EmployeeController implements EntityController<EmployeeEntity> {
     public EmployeeEntity findById(Class<EmployeeEntity> clazz, Long id) {
         return (EmployeeEntity) hibernateTransaction.findById(clazz, id);
     }
-    
+
+    @Override
+    public List<EmployeeEntity> getAll(Class<EmployeeEntity> clazz) {
+        return hibernateTransaction.findAll(clazz);
+    }
+
 }

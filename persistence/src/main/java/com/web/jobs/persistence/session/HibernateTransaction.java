@@ -7,6 +7,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
+
 public class HibernateTransaction implements PersistenceEntity {
 
     private static HibernateTransaction INSTANCE = null;
@@ -59,5 +63,22 @@ public class HibernateTransaction implements PersistenceEntity {
         session.close();
 
         return object;
+    }
+    
+    public List findAll(Class clazz) {
+        // Open a session
+        Session session = getSessionFactory().openSession();
+        // Create CriteriaBuilder
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        // Create CriteriaQuery
+        CriteriaQuery criteria = builder.createQuery(clazz);
+        // Specify criteria root
+        criteria.from(clazz);
+        // Execute query
+        List result = session.createQuery(criteria).getResultList();
+        // Close the session
+        session.close();
+
+        return result;
     }
 }

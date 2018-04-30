@@ -5,6 +5,8 @@ import com.web.jobs.persistence.entity.JobEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class JobService {
 
@@ -22,5 +24,9 @@ public class JobService {
 
     public JobEntity findById(Long id){
         return jobController.findById(JobEntity.class, id);
+    }
+    
+    public List<JobEntity> getAll() {
+        return jobController.getAll(JobEntity.class);
     }
 }

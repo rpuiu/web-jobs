@@ -4,11 +4,11 @@
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    
+
         <!-- AngularJS dependencies -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-        
+
         <!-- JavaScript components -->
         <script type="text/javascript" src="static/app.js" th:src="@{/app.js}"></script>
         <script type="text/javascript" src="static/controllers/HomeController.js" th:src="@{/controllers/HomeController.js}"></script>
@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
         <link rel="stylesheet" th:href="@{/styles.css}" />
-        
+
         <script type="text/javascript">
             angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
         </script>
@@ -26,17 +26,23 @@
     </head>
 
     <body ng-app="app">
-        <nav class="navbar navbar-dark bg-dark">
-            <!-- Navbar content -->
-            <a href="/">HOME PAGE</a>
-            <a href="/user">USER</a>
-            <a href="/history">HISTORY</a>
-        </nav>
-        
-        <div ng-view="">
-            <!-- Single page application -->
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="row col-md-2">
+                    <a class="navbar-brand" padding="0" href="#"><img src="static/img/logo1.png" th:src="@{/img/logo1.png}" width="150" alt="Logo"/></a>
+                </div>
+                <div class="row col-md-5">
+                    <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg btn-outline-success">Ajutor</button></div>
+                    <div class="col-md-4"><button type="button" class="btn btn-primary btn-lg btn-danger">Adauga anunt</button></div>
+                    <div class="col-md-5"><a href="/user" role="button"><button type="button" class="btn btn-primary btn-lg">Creeaza cont</button></a></div>
+                </div>
+            </nav>
+
+            <div ng-view="">
+                <!-- Single page application -->
+            </div>
         </div>
-        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

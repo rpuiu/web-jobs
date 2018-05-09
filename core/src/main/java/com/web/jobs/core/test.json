@@ -1,0 +1,8 @@
+{
+  "id": null,
+  "jobTitle": "jobTitle",
+  "description": "description",
+  "category": "category",
+  "fare": 123.0,
+  "employeeId": 1
+}

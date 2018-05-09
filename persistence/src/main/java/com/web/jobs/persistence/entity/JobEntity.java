@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity(name = "Job")
@@ -25,20 +26,28 @@ public class JobEntity implements DbEntity {
 
     @Column
     private Double fare;
+    
+    @Column
+    private Long employeeIdentifier;
+    
+    @Column
+    private String test;
 
     @OneToOne(mappedBy = "jobEntity")
     private EmployeeEntity employeeEntity;
+    
 
 
     public JobEntity() {
         // Default constructor
     }
 
-    public JobEntity(String jobTitle, String description, String category, Double fare) {
+    public JobEntity(String jobTitle, String description, String category, Double fare, Long employeeIdentifier, String test) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.category = category;
         this.fare = fare;
+        this.employeeIdentifier = employeeIdentifier;
     }
 
     public String getJobTitle() {
@@ -65,5 +74,13 @@ public class JobEntity implements DbEntity {
     @Override
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getEmployeeIdentifier() {
+        return employeeIdentifier;
+    }
+
+    public String getTest() {
+        return test;
     }
 }

@@ -57,5 +57,13 @@ public class EmployeeEntity implements DbEntity {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public void setPersonEntity(PersonEntity personEntity) {
+        this.personEntity = personEntity;
+    }
+    
+    public void setJobEntity(JobEntity jobEntity) {
+        this.jobEntity = jobEntity;
+    }
 }
 

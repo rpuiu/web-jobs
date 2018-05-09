@@ -10,6 +10,7 @@
         console.log("UserController.");
 
         $scope.addUser = function(){
+            
             var successCallBack = function(response){
                 // success response found from server
             };
@@ -26,6 +27,7 @@
                         email: $scope.email
                     }
                 };
+                console.log(data);
                 $http.post('/api/user/add', data).then(successCallBack, errorCallBack);
         };
     }

@@ -25,10 +25,20 @@ public class JobRestController {
         this.jobService = jobService;
     }
     
+    /*
+    {
+      "jobTitle": "jobTitle",
+      "description": "description",
+      "category": "category",
+      "employeeIdentifier": 1,
+      "test": "lucian"
+    }
+     */
+    
     @PostMapping(value = "/job/add")
     public ResponseEntity insert(@RequestBody JobEntity job) {
         // TODO: validate the input
-        jobService.insert(job.getJobTitle(), job.getDescription(), job.getCategory(), job.getFare());
+        jobService.insert(job.getJobTitle(), job.getDescription(), job.getCategory(), job.getFare(), job.getEmployeeIdentifier(), job.getTest());
         
         return ResponseEntity.ok().build();
     }

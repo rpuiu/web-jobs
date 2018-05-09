@@ -45,6 +45,14 @@ public class HibernateTransaction implements PersistenceEntity {
         session.save(dbEntity);
         session.getTransaction().commit();
         session.close();
+    } 
+    @Override
+    public void update(DbEntity dbEntity) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(dbEntity);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override

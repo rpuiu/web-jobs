@@ -9,4 +9,12 @@
   },
   "jobEntities": [],
   "ratingEntities": []
+},
+
+{
+  "jobTitle": "jobTitle",
+  "description": "description",
+  "category": "category",
+  "fare": 213.1,
+  "employeeIdentifier": 1
 }

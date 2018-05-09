@@ -29,9 +29,6 @@ public class JobEntity implements DbEntity {
     @Column
     private Long employeeIdentifier;
 
-    @ManyToOne
-    private EmployeeEntity employeeEntity;
-    
     public JobEntity() {
         // Default constructor
     }

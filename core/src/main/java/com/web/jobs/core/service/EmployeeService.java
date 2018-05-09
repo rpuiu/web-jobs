@@ -19,6 +19,9 @@ public class EmployeeService {
     public void insert(PersonEntity person) {
         EmployeeEntity employee = new EmployeeEntity(person);
         employeeController.create(employee);
+    }   
+    public void update(EmployeeEntity employee) {
+        employeeController.update(employee);
     }
 
     public void delete(EmployeeEntity employeeEntity){

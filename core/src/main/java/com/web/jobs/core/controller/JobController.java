@@ -17,6 +17,11 @@ public class JobController implements EntityController<JobEntity> {
     }
 
     @Override
+    public void update(JobEntity model) {
+        //TODO update jobs if necessary
+    }
+
+    @Override
     public void delete(JobEntity model) {
         hibernateTransaction.delete(model);
     }

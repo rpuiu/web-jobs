@@ -17,6 +17,11 @@ public class UserController implements EntityController<UserEntity> {
     }
 
     @Override
+    public void update(UserEntity model) {
+        //TODO update user if necessary
+    }
+
+    @Override
     public void delete(UserEntity model) {
         hibernateTransaction.delete(model);
     }

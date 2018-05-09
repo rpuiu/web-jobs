@@ -14,6 +14,11 @@ public class EmployeeController implements EntityController<EmployeeEntity> {
     @Override
     public void create(EmployeeEntity model) {
         hibernateTransaction.insert(model);
+    }  
+    
+    @Override
+    public void update(EmployeeEntity model) {
+        hibernateTransaction.update(model);
     }
 
     @Override

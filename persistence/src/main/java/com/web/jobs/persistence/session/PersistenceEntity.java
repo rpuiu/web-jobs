@@ -7,6 +7,7 @@ import java.util.List;
 public interface PersistenceEntity {
 
     void insert(DbEntity dbEntity);
+    void update(DbEntity dbEntity);
     void delete(DbEntity dbEntity);
     Object findById(Class clazz, Long id);
     List findAll(Class clazz);

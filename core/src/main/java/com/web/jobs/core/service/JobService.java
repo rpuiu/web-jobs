@@ -26,6 +26,7 @@ public class JobService {
             JobEntity jobEntity = new JobEntity(jobTitle, description, category, fare, employeeEntity.getId());
             employeeEntity.addJob(jobEntity);
             jobController.create(jobEntity);
+            employeeController.update(employeeEntity);
         }
     }
 

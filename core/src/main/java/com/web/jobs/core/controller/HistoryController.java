@@ -17,6 +17,11 @@ public class HistoryController implements EntityController<HistoryEntity> {
     }
 
     @Override
+    public void update(HistoryEntity model) {
+        //TODO update history if necessary        
+    }
+
+    @Override
     public void delete(HistoryEntity model) {
         hibernateTransaction.delete(model);
     }

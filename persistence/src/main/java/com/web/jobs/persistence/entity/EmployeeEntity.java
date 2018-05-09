@@ -4,6 +4,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Employee")
@@ -17,37 +18,27 @@ public class EmployeeEntity implements DbEntity {
     @JoinColumn(name = "person_id", unique = true)
     private PersonEntity personEntity;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "job_id", unique = true)
-    private JobEntity jobEntity;
+    @OneToMany(cascade = {CascadeType.ALL})
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<JobEntity> jobEntities = new ArrayList<>();
 
     @OneToMany(cascade = {CascadeType.ALL})
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<RatingEntity> ratingEntity;
+    private List<RatingEntity> ratingEntities = new ArrayList<>();
 
 
     public EmployeeEntity() {
         // Default constructor
     }
 
-    public EmployeeEntity(PersonEntity personEntity, JobEntity jobEntity, List<RatingEntity> ratingEntity) {
+    public EmployeeEntity(PersonEntity personEntity) {
         this.personEntity = personEntity;
-        this.jobEntity = jobEntity;
-        this.ratingEntity = ratingEntity;
     }
 
     public PersonEntity getPersonEntity() {
         return personEntity;
     }
-
-    public JobEntity getJobEntity() {
-        return jobEntity;
-    }
-
-    public List<RatingEntity> getRatingEntity() {
-        return ratingEntity;
-    }
-
+    
     @Override
     public Long getId() {
         return id;
@@ -61,9 +52,21 @@ public class EmployeeEntity implements DbEntity {
     public void setPersonEntity(PersonEntity personEntity) {
         this.personEntity = personEntity;
     }
-    
-    public void setJobEntity(JobEntity jobEntity) {
-        this.jobEntity = jobEntity;
+
+    public List<RatingEntity> getRatingEntities() {
+        return ratingEntities;
+    }
+
+    public void addRating(RatingEntity ratingEntity) {
+        this.ratingEntities.add(ratingEntity);
+    }
+
+    public List<JobEntity> getJobEntities() {
+        return jobEntities;
+    }
+
+    public void addJob(JobEntity jobEntity) {
+        this.jobEntities.add(jobEntity);
     }
 }
 

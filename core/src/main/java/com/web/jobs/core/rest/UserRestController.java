@@ -25,7 +25,7 @@ public class UserRestController {
     @PostMapping(value = "/user/add")
     public ResponseEntity insert(@RequestBody UserEntity user) {
         // TODO: validate the input
-        userService.insert(user.getPersonEntity(), user.getBankAccount());
+        userService.insert(user.getPerson());
 
         return ResponseEntity.ok().build();
     }

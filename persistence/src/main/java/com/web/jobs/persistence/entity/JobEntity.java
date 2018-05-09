@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "Job")
 public class JobEntity implements DbEntity {
@@ -29,20 +28,15 @@ public class JobEntity implements DbEntity {
     
     @Column
     private Long employeeIdentifier;
-    
-    @Column
-    private String test;
 
-    @OneToOne(mappedBy = "jobEntity")
+    @ManyToOne
     private EmployeeEntity employeeEntity;
     
-
-
     public JobEntity() {
         // Default constructor
     }
 
-    public JobEntity(String jobTitle, String description, String category, Double fare, Long employeeIdentifier, String test) {
+    public JobEntity(String jobTitle, String description, String category, Double fare, Long employeeIdentifier) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.category = category;
@@ -78,9 +72,5 @@ public class JobEntity implements DbEntity {
 
     public Long getEmployeeIdentifier() {
         return employeeIdentifier;
-    }
-
-    public String getTest() {
-        return test;
     }
 }

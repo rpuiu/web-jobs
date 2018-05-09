@@ -23,6 +23,9 @@ public class PersonEntity implements DbEntity {
     private String surname;
 
     @Column
+    private String email;
+    
+    @Column
     private String username;
 
     @Column
@@ -30,9 +33,6 @@ public class PersonEntity implements DbEntity {
 
     @Column
     private String phone;
-
-    @Column
-    private String bankAccount;
 
     @OneToOne(mappedBy = "personEntity")
     private EmployeeEntity employeeEntity;
@@ -48,19 +48,10 @@ public class PersonEntity implements DbEntity {
     public PersonEntity(PersonBuilder personBuilder) {
         this.name = personBuilder.getName();
         this.surname = personBuilder.getSurname();
+        this.email = personBuilder.getEmail();
         this.username = personBuilder.getUsername();
         this.address = personBuilder.getAddress();
         this.phone = personBuilder.getPhone();
-        this.bankAccount = personBuilder.getBankAccount();
-    }
-
-    public PersonEntity(String name, String surname, String username, String address, String phone, String bankAccount) {
-        this.name = name;
-        this.surname = surname;
-        this.username = username;
-        this.address = address;
-        this.phone = phone;
-        this.bankAccount = bankAccount;
     }
 
     @Override
@@ -92,9 +83,12 @@ public class PersonEntity implements DbEntity {
     public String getPhone() {
         return phone;
     }
-
-    public String getBankAccount() {
-        return bankAccount;
+    
+    public String getEmail() {
+        return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

@@ -19,12 +19,12 @@ public class JobService {
     @Autowired
     private EmployeeController employeeController;
 
-    public void insert(String jobTitle, String description, String category, Double fare, Long employeeId, String test) {
+    public void insert(String jobTitle, String description, String category, Double fare, Long employeeId) {
         EmployeeEntity employeeEntity = employeeController.findById(EmployeeEntity.class, employeeId);
         
         if (Objects.nonNull(employeeEntity)) {
-            JobEntity jobEntity = new JobEntity(jobTitle, description, category, fare, employeeEntity.getId(), test);
-            employeeEntity.setJobEntity(jobEntity);
+            JobEntity jobEntity = new JobEntity(jobTitle, description, category, fare, employeeEntity.getId());
+            employeeEntity.addJob(jobEntity);
             jobController.create(jobEntity);
         }
     }

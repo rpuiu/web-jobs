@@ -14,8 +14,8 @@ public class UserService {
     @Autowired
     private UserController userController;
 
-    public void insert(PersonEntity person, String bankAccount) {
-        UserEntity userEntity = new UserEntity(person, bankAccount);
+    public void insert(PersonEntity person) {
+        UserEntity userEntity = new UserEntity(person);
         userController.create(userEntity);
     }
 

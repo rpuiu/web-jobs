@@ -4,7 +4,6 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,30 +27,26 @@ public class UserEntity implements DbEntity {
 
     @OneToMany(cascade = {CascadeType.ALL})
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<RatingEntity> ratingEntity = new ArrayList<>();
-
-    @Column
-    private String bankAccount;
+    private List<RatingEntity> ratingEntities = new ArrayList<>();
 
     public UserEntity() {
         // Default constructor
     }
 
-    public UserEntity(PersonEntity personEntity, String bankAccount) {
+    public UserEntity(PersonEntity personEntity) {
         this.personEntity = personEntity;
-        this.bankAccount = bankAccount;
     }
 
-    public PersonEntity getPersonEntity() {
+    public PersonEntity getPerson() {
         return personEntity;
     }
 
-    public List<RatingEntity> getRatingEntity() {
-        return ratingEntity;
+    public List<RatingEntity> getRatings() {
+        return ratingEntities;
     }
-
-    public String getBankAccount() {
-        return bankAccount;
+    
+    public void addRating(RatingEntity ratingEntity) {
+        this.ratingEntities.add(ratingEntity);
     }
 
     @Override

@@ -6,10 +6,10 @@ public class PersonBuilder {
 
     private String name;
     private String surname;
+    private String email;
     private String username;
     private String address;
     private String phone;
-    private String bankAccount;
 
     public PersonBuilder() {
         // Default constructor
@@ -22,6 +22,11 @@ public class PersonBuilder {
 
     public PersonBuilder withSurame(String surname) {
         this.surname = surname;
+        return this;
+    }
+    
+    public PersonBuilder withEmail(String email) {
+        this.email = email;
         return this;
     }
 
@@ -37,11 +42,6 @@ public class PersonBuilder {
 
     public PersonBuilder withPhone(String phone) {
         this.phone = phone;
-        return this;
-    }
-
-    public PersonBuilder withBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
         return this;
     }
 
@@ -68,8 +68,8 @@ public class PersonBuilder {
     public String getPhone() {
         return phone;
     }
-
-    public String getBankAccount() {
-        return bankAccount;
+    
+    public String getEmail() {
+        return email;
     }
 }

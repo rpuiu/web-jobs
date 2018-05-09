@@ -28,7 +28,7 @@ public class EmployeeRestController {
     @PostMapping(value = "/employee/add")
     public ResponseEntity insert(@RequestBody EmployeeEntity employeeEntity) {
         // TODO: validate the input
-        employeeService.insert(employeeEntity.getPersonEntity(), employeeEntity.getJobEntity(), employeeEntity.getRatingEntity());
+        employeeService.insert(employeeEntity.getPersonEntity());
         
         return ResponseEntity.ok().build();
     }

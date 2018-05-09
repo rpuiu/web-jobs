@@ -16,8 +16,8 @@ public class EmployeeService {
     @Autowired
     private EmployeeController employeeController;
 
-    public void insert(PersonEntity person, JobEntity jobEntity, List<RatingEntity> ratingEntities) {
-        EmployeeEntity employee = new EmployeeEntity(person, jobEntity, ratingEntities);
+    public void insert(PersonEntity person) {
+        EmployeeEntity employee = new EmployeeEntity(person);
         employeeController.create(employee);
     }
 

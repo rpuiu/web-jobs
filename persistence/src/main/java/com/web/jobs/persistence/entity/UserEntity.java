@@ -3,14 +3,7 @@ package com.web.jobs.persistence.entity;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +22,24 @@ public class UserEntity implements DbEntity {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<RatingEntity> ratingEntities = new ArrayList<>();
 
+    @Column
+    private boolean isEmployee;
+
+    public boolean getIsEmployee() {
+        return isEmployee;
+    }
+
+    public void setIsEmployee(boolean employee) {
+        isEmployee = employee;
+    }
+
     public UserEntity() {
         // Default constructor
     }
 
-    public UserEntity(PersonEntity personEntity) {
+    public UserEntity(PersonEntity personEntity, boolean isEmployee) {
         this.personEntity = personEntity;
+        this.isEmployee = isEmployee;
     }
 
     public PersonEntity getPersonEntity() {

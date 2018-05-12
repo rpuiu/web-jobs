@@ -22,7 +22,7 @@ public class UserRestController {
     @PostMapping(value = "/user/add")
     public ResponseEntity insert(@RequestBody UserEntity user) {
         // TODO: validate the input
-        userService.insert(user.getPersonEntity());
+        userService.insert(user);
 
         return ResponseEntity.ok().build();
     }

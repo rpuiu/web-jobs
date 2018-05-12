@@ -1,6 +1,8 @@
 package com.web.jobs.core.service;
 
+import com.web.jobs.core.controller.EmployeeController;
 import com.web.jobs.core.controller.UserController;
+import com.web.jobs.persistence.entity.EmployeeEntity;
 import com.web.jobs.persistence.entity.PersonEntity;
 import com.web.jobs.persistence.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,14 @@ public class UserService {
 
     @Autowired
     private UserController userController;
+    @Autowired
+    private EmployeeController employeeController;
 
-    public void insert(PersonEntity person) {
-        UserEntity userEntity = new UserEntity(person);
+    public void insert(UserEntity userEntity) {
+        if(userEntity.getIsEmployee()){
+            EmployeeEntity employeeEntity = new EmployeeEntity(userEntity.getPersonEntity());
+            employeeController.create(employeeEntity);
+        }
         userController.create(userEntity);
     }
 

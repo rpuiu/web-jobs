@@ -18,14 +18,17 @@
             var errorCallBack = function(response){
                 // error response found from server
             };
+            var isEmployee =  "Angajat" === $scope.isEmployee;
+
                 var data = {
                     personEntity: {
                         name: $scope.name,
                         surname: $scope.surname,
                         username: $scope.username,
                         phone: $scope.phone,
-                        email: $scope.email
-                    }
+                        email: $scope.email,
+                    },
+                    isEmployee: isEmployee
                 };
                 console.log(data);
                 $http.post('/api/user/add', data).then(successCallBack, errorCallBack);

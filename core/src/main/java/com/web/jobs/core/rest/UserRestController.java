@@ -1,12 +1,9 @@
 package com.web.jobs.core.rest;
 
 import com.web.jobs.core.service.UserService;
-import com.web.jobs.persistence.entity.PersonEntity;
 import com.web.jobs.persistence.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +22,7 @@ public class UserRestController {
     @PostMapping(value = "/user/add")
     public ResponseEntity insert(@RequestBody UserEntity user) {
         // TODO: validate the input
-        userService.insert(user.getPerson());
+        userService.insert(user.getPersonEntity());
 
         return ResponseEntity.ok().build();
     }

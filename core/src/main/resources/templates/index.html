@@ -14,6 +14,7 @@
         <script type="text/javascript" src="static/controllers/HomeController.js" th:src="@{/controllers/HomeController.js}"></script>
         <script type="text/javascript" src="static/controllers/UserController.js" th:src="@{/controllers/UserController.js}"></script>
         <script type="text/javascript" src="static/controllers/HistoryController.js" th:src="@{/controllers/HistoryController.js}"></script>
+        <script type="text/javascript" src="static/controllers/NewJobController.js" th:src="@{/controllers/NewJobController.js}"></script>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
         <link rel="stylesheet" th:href="@{/styles.css}" />
@@ -34,7 +35,7 @@
                 </div>
                 <div class="row col-md-5">
                     <div class="col-md-3"><button type="button" class="btn btn-primary btn-lg btn-outline-success">Ajutor</button></div>
-                    <div class="col-md-4"><button type="button" class="btn btn-primary btn-lg btn-danger">Adauga anunt</button></div>
+                    <div class="col-md-4"><a href="/newjob" role="button"><button type="button" class="btn btn-primary btn-lg btn-danger">Adauga anunt</button></a></div>
                     <div class="col-md-5"><a href="/user" role="button"><button type="button" class="btn btn-primary btn-lg">Creeaza cont</button></a></div>
                 </div>
             </nav>

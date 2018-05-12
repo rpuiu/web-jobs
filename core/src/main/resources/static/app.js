@@ -20,6 +20,11 @@
             controller: "UserController",
             controllerAs: "user"
         })
+        .when("/newjob", {
+            templateUrl: "views/newjob.html",
+            controller: "NewJobController",
+            controllerAs: "newjob"
+        })
         .otherwise({
             redirectTo: "/"
         })

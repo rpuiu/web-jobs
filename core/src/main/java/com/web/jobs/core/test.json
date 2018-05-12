@@ -1,20 +1,8 @@
 {
-  "personEntity": {
-    "name": "Name 1",
-    "surname": "Name 1",
-    "email": "Name 1",
-    "username": "Name 1",
-    "address": "Name 1",
-    "phone": "Name 1"
-  },
-  "jobEntities": [],
-  "ratingEntities": []
-},
-
-{
+  "id": null,
   "jobTitle": "jobTitle",
   "description": "description",
   "category": "category",
-  "fare": 213.1,
+  "fare": 123.0,
   "employeeIdentifier": 1
 }

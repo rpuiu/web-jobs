@@ -37,7 +37,7 @@ public class UserEntity implements DbEntity {
         this.personEntity = personEntity;
     }
 
-    public PersonEntity getPerson() {
+    public PersonEntity getPersonEntity() {
         return personEntity;
     }
 

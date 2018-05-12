@@ -19,7 +19,7 @@ public class Test {
 
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String json = mapper.writeValueAsString(employeeEntity);
+            String json = mapper.writeValueAsString(artist);
             System.out.println("JSON = " + json);
         } catch (JsonProcessingException e) {
             e.printStackTrace();

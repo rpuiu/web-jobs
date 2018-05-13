@@ -34,5 +34,5 @@
                 $http.post('/api/user/add', data).then(successCallBack, errorCallBack);
         };
     }
-
+//TODO empty fields after submit
 })();

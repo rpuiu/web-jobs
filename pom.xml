@@ -7,7 +7,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
-        <relativePath/>
     </parent>
 
     <groupId>com.webjobs</groupId>
@@ -18,8 +17,8 @@
     <name>Web Jobs Parent</name>
 
     <modules>
-        <module>common</module>
         <module>persistence</module>
+        <module>common</module>
         <module>core</module>
     </modules>
 
@@ -33,21 +32,7 @@
         <slf4j.api.version>1.7.5</slf4j.api.version>
         <slf4j.log4j12.version>1.7.5</slf4j.log4j12.version>
     </properties>
-
-    <!--<build>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<mainClass>com.web.jobs.core.Application</mainClass>-->
-                    <!--<jvmArguments>-->
-                        <!-- -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
-                    <!--</jvmArguments>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
-    <!--</build>-->
+    
     <dependencyManagement>
         <dependencies>
             <dependency>

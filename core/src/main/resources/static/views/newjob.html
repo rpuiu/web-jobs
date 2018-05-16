@@ -1,27 +1,31 @@
-<div class="row justify-content-center">
-    <form class="col-md-6" method="post" ng-submit="addJob()">
-        <div class="form-group">
-            <label for="inputJobCategory">Categorie: </label>
-            <input type="text" class="form-control" id="inputJobCategory" placeholder="Selecteaza o categorie"  name="category" ng-model="category" >
-        </div>
+<div class="section section-new-job">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form class="col-md-6" method="post" ng-submit="addJob()">
+                <div class="form-group">
+                    <label for="inputJobCategory">Categorie: </label>
+                    <input type="text" class="form-control" id="inputJobCategory" placeholder="Selecteaza o categorie"  name="category" ng-model="category" >
+                </div>
 
-        <div class="form-group">
-            <label for="inputJobTitle">Titlu: </label>
-            <input type="text" class="form-control"  id="inputJobTitle" placeholder="ex: Numele tau/numele firmei"  name="title" ng-model="jobTitle">
-        </div>
-        <div class="form-group">
-            <label for="inputJobDescription">Descriere: </label>
-            <input type="text" class="form-control" id="inputJobDescription" placeholder="O descriere a serviciului prestat" ng-model="description">
-        </div>
-        <div class="form-group">
-            <label for="inputFare">Tarif: </label>
-            <input type="text" class="form-control" id="inputFare" placeholder="Pretul serviciului prestat" ng-model="fare">
-        </div>
+                <div class="form-group">
+                    <label for="inputJobTitle">Titlu: </label>
+                    <input type="text" class="form-control"  id="inputJobTitle" placeholder="ex: Numele tau/numele firmei"  name="title" ng-model="jobTitle">
+                </div>
+                <div class="form-group">
+                    <label for="inputJobDescription">Descriere: </label>
+                    <input type="text" class="form-control" id="inputJobDescription" placeholder="O descriere a serviciului prestat" ng-model="description">
+                </div>
+                <div class="form-group">
+                    <label for="inputFare">Tarif: </label>
+                    <input type="text" class="form-control" id="inputFare" placeholder="Pretul serviciului prestat" ng-model="fare">
+                </div>
 
-        <div class="form-group">
-            <div style="padding-left:110px">
-                <input type="submit" value="Adauga anunt!" class="btn btn-primary"/>
-            </div>
+                <div class="form-group">
+                    <div style="padding-left:110px">
+                        <input type="submit" value="Adauga anunt!" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>

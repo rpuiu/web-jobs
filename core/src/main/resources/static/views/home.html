@@ -1,20 +1,141 @@
-<table ng-controller="DisplayJobController as vm">
-    <tbody>
-    <tr ng-repeat="emp in vm.empWithJobs">
-        <td>
-            <div class="card text-center" style="width: 18rem;" ng-repeat="job in emp.jobEntities">
-                <!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
-
-                <div class="card-body" >
-                    <h5 class="card-title">Job Title: {{job.jobTitle}}</h5>
-                    <p class="card-text">Job Description: {{job.description}}</p>
-                    <p class="card-text">Empl name: {{emp.personEntity.name}}</p>
-                    <p class="card-text">Empl email: {{emp.personEntity.email}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="section section-home">
+    
+    <div class="section section-main">
+        <div class="container">
+            <div class="row">
+                <div class="main-content">
+                    <h1 class="main-content-title">
+                        <span class="text-theme">Acum iți poți alege un client pe măsura ta!</span> Crează-ți propriul anunț.
+                    </h1>
+                    <p class="main-content-subtitle">
+                        <span class="text-theme">25</span> de micro joburi noi în ultimele <span class="text-theme">3</span> luni. Caută-ți persoana care te poate ajuta!
+                    </p>
                 </div>
             </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+        </div>
+    </div>
+
+    <div class="section section-about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h2 class="title">Cine suntem?</h2>
+                    <h5 class="description">Echipa noastră dorește să dezvolte platforma "deMuncă.ro" pentru a oferi posibilitatea fiecărei persoane capabilă de un micro job, să își găsească clienții ce sunt în căutarea rezolvării unei probleme.</h5>
+                    <br/>
+                    <h5 class="description">Dacă ești priceput într-un anumit domeniu, de exemplu, ești un croitor foarte bun, un instalator sau îți place să ai grijă de integritatea instrumentelor muzicale sau dorința ta este de a recondiționa cât mai multe imobile sau obiecte de mobilier, <b>atunci</b>, te rugăm să îți adaugi propriul anunț iar noi ne vom ocupa să întâlnești cei mai buni clienți!</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-team-members text-center">
+        <div class="container">
+            <div class="team">
+                <h2 class="title">Echipa noastră</h2>
+
+                <div class="team-members">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="team-player">
+                                <img class="rounded-circle" src="resources/static/profile/filip_profile.jpg" th:src="@{resources/static/profile/filip_profile.jpg}" alt="Generic placeholder image" width="140" height="140" />
+                                <h4 class="title">Lucian Filip</h4>
+                                <p class="category text-primary">Software developer</p>
+                                <p class="description">Descriere</p>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
+                            </div>
+                        </div><!-- /.col-lg-4 -->
+
+                        <div class="col-lg-4">
+                            <div class="team-player">
+                                <img class="rounded-circle" src="static/profile/rounded-circle.gif" th:src="@{/static/georgiana_profile.jpeg}" alt="Generic placeholder image" width="140" height="140" />
+                                <h4 class="title">Georgiana Matache</h4>
+                                <p class="category text-primary">Project manager</p>
+                                <p class="description">Descriere</p>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
+                            </div>
+                        </div><!-- /.col-lg-4 -->
+
+                        <div class="col-lg-4">
+                            <div class="team-player">
+                                <img class="rounded-circle" src="profile/rounded-circle.gif" th:src="@{/profile/puiu_profile.jpg}" alt="Generic placeholder image" width="140" height="140" />
+                                <h4 class="title">Razvan Puiu</h4>
+                                <p class="category text-primary">Software developer</p>
+                                <p class="description">Descriere</p>
+                                <a href="#" class="btn btn-primary btn-round"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-primary btn-round"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-primary btn-round"><i class="fab fa-facebook-square"></i></a>
+                            </div>
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.team-members -->
+            </div><!-- /.container -->
+        </div>
+    </div>
+
+    <div class="section section-contact-us text-center">
+        <div class="container">
+
+            <div class="contact">
+                <h2 class="title">Vrei sa afli mai multe?</h2>
+                <p class="description">Abonează-te pentru mai multe detalii!</p>
+
+                <div class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8 ml-auto mr-auto">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Nume" aria-label="Name" aria-describedby="basic-addon1" />
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-at"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" />
+                            </div>
+
+                            <div class="send-button">
+                                <button type="button" class="btn btn-primary">Abonare</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-copyright text-center">
+        <div class="container">
+            <div class="row">
+                <!--<p>&copy; Company 2017-2018</p>-->
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!--<table ng-controller="DisplayJobController as vm">-->
+    <!--<tbody>-->
+    <!--<tr ng-repeat="emp in vm.empWithJobs">-->
+        <!--<td>-->
+            <!--<div class="card text-center" style="width: 18rem;" ng-repeat="job in emp.jobEntities">-->
+                <!--&lt;!&ndash;<img class="card-img-top" src=".../100px180/" alt="Card image cap">&ndash;&gt;-->
+
+                <!--<div class="card-body" >-->
+                    <!--<h5 class="card-title">Job Title: {{job.jobTitle}}</h5>-->
+                    <!--<p class="card-text">Job Description: {{job.description}}</p>-->
+                    <!--<p class="card-text">Empl name: {{emp.personEntity.name}}</p>-->
+                    <!--<p class="card-text">Empl email: {{emp.personEntity.email}}</p>-->
+                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
 

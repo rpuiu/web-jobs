@@ -1,411 +1,164 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title th:text="#{index.page.title}">Page Title</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>WebJobs</title>
 
-    <link href="../static/css/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" media="screen"
-          th:href="@{/css/bootstrap-3.3.4-dist/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
 
-    <script src="../static/js/jquery-2.1.4.min.js"
-            th:src="@{/js/jquery-2.1.4.min.js}"></script>
-
-    <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen"/>
-
-    <style th:remove="all">
-        .jumbotron {
-            background: url('../static/images/SpringCoreJumbotron.jpg') no-repeat center center;
-            height: 350px;
-            color: white;
-            text-shadow: #444 0 1px 1px;
-        }
-
-        body {
-            color: #2b3636;
-            font-family: "Proxima";
-        }
-
-        body {
-            color: #333;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.42857;
-        }
-
-        .row {
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-
-        *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        .view-directory .course-listing {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-
-        .course-listing {
-            background-color: #f7f7f7;
-            border: 1px solid #f1f3f0;
-            border-radius: 9px;
-            box-shadow: 0 1px #f1f3f0;
-            cursor: pointer;
-            height: 390px;
-            margin-bottom: 50px;
-            padding: 0;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .course-listing .course-box-image-container {
-            max-height: 208px;
-            overflow: hidden;
-        }
-
-        .course-listing .course-box-image-container .course-box-image {
-            border-bottom: 1px solid #ededed;
-            border-top-left-radius: 9px;
-            border-top-right-radius: 9px;
-            display: block;
-            margin: auto;
-            width: 100%;
-        }
-
-        img {
-            vertical-align: middle;
-        }
-
-        img {
-            border: 0 none;
-        }
-
-        .course-listing .course-listing-title {
-            color: #6cb44a;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 25px;
-            max-height: 70px;
-            overflow: hidden;
-            padding: 16px 16px 4px;
-        }
-
-        .course-listing .course-listing-subtitle {
-            color: #586f6f;
-            font-size: 14px;
-            font-weight: 200;
-            max-height: 65px;
-            overflow: hidden;
-            padding: 5px 16px;
-        }
-
-        .course-listing .course-listing-extra-info .course-price {
-            color: #6eae50 !important;
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 34px;
-            padding-right: 10px;
-            text-align: right;
-        }
-
-        .course-listing .course-listing-extra-info .course-author-name {
-            font-size: 15px;
-            font-weight: 200;
-            line-height: 30px;
-            max-height: 30px;
-            overflow: hidden;
-            padding-left: 5px;
-        }
-
-        .course-listing .course-listing-extra-info .course-bundle {
-            font-size: 15px;
-            font-weight: 200;
-            line-height: 30px;
-        }
-    </style>
-
-</head>
-<body>
-<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
-    <div class="container">
-        <h1>Spring Framework Guru</h1>
-        <p class="lead" th:text="#{index.courses.tagline}">Tag line</p>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 th:text="#{index.courses.headline}">Courses Headline</h1>
-        </div>
-    </div>
-
-    <div class="row course-list list">
-        <div class='row course-list list'>
-            <div th:each="product,it : ${products}">
-                <div th:if="${(it.count gt 0 and it.count lt 4)}">
-                    <div th:replace="fragments/productdiv :: productdiv">
-
-                    </div>
-                </div>
+        <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen"/>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">deMuncă.ro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Acasă<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Joburi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profil</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div>
-
-    <div class="row course-list list">
-        <div class='row course-list list'>
-            <div th:each="product,it : ${products}">
-                <div th:if="${(it.count gt 3 and it.count lt 7)}">
-                    <div th:replace="fragments/productdiv :: productdiv">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row course-list list" th:remove="all">
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a href="product.html" th:href="@{/product/1}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/SpringIntroThumb.png"
-                                     th:src="@{images/SpringIntroThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Introduction to Spring
-                            </div>
-                            <div class="course-listing-subtitle">
-                                Introductory Course for the Spring Framework
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             th:src="@{images/instructor_jt.jpg}"
-                             class="img-circle"/>
-                        <div class="small course-author-name">
-                            John Thompson
+        </nav>
+    
+        <main role="main">
+    
+            <div class="section section-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="main-content">
+                            <h1 class="main-content-title">
+                                <span class="text-theme">Acum iți poți alege un client pe măsura ta!</span> Crează-ți propriul anunț.
+                            </h1>
+                            <p class="main-content-subtitle">
+                                <span class="text-theme">25</span> de micro joburi noi în ultimele <span class="text-theme">3</span> luni. Caută-ți persoana care te poate ajuta!
+                            </p>
                         </div>
                     </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            FREE
+                </div>
+    
+            </div>
+    
+            <div class="section section-about-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto text-center">
+                            <h2 class="title">Cine suntem?</h2>
+                            <h5 class="description">Echipa noastră dorește să dezvolte platforma "deMuncă.ro" pentru a oferi posibilitatea fiecărei persoane capabilă de un micro job, să își găsească clienții ce sunt în căutarea rezolvării unei probleme.</h5>
+                            <br/>
+                            <h5 class="description">Dacă ești priceput într-un anumit domeniu, de exemplu, ești un croitor foarte bun, un instalator sau îți place să ai grijă de integritatea instrumentelor muzicale sau dorința ta este de a recondiționa cât mai multe imobile sau obiecte de mobilier, <b>atunci</b>, te rugăm să îți adaugi propriul anunț iar noi ne vom ocupa să întâlnești cei mai buni clienți!</h5>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a data-role="course-box-link" href="product.html" th:href="@{/product/4}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/SpringCoreThumb.png"
-                                     th:src="@{images/SpringCoreThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Spring Core
-                            </div>
-                            <div class="course-listing-subtitle">
-                                The Fundamentals of Spring Framework
-                            </div>
-                        </div>
-                    </a>
+    
+            <div class="section section-team-members text-center">
+                <div class="container">
+    
+                    <div class="team">
+                        <h2 class="title">Echipa noastră</h2>
+    
+                        <div class="team-members">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="team-player">
+                                        <img class="rounded-circle" src="/images/profiles/filip_profile.jpg" width="140" height="140" />
+                                        <h4 class="title">Lucian Filip</h4>
+                                        <p class="category text-primary">Software developer</p>
+                                        <p class="description">Descriere</p>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
+                                    </div>
+                                </div><!-- /.col-lg-4 -->
+    
+                                <div class="col-lg-4">
+                                    <div class="team-player">
+                                        <img class="rounded-circle" src="/images/profiles/georgiana_profile.jpg" width="140" height="140" />
+                                        <h4 class="title">Georgiana Matache</h4>
+                                        <p class="category text-primary">Project manager</p>
+                                        <p class="description">Descriere</p>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
+                                    </div>
+                                </div><!-- /.col-lg-4 -->
+    
+                                <div class="col-lg-4">
+                                    <div class="team-player">
+                                        <img class="rounded-circle" src="/images/profiles/puiu_profile.jpg" width="140" height="140" />
+                                        <h4 class="title">Razvan Puiu</h4>
+                                        <p class="category text-primary">Software developer</p>
+                                        <p class="description">Descriere</p>
+                                        <a href="#" class="btn btn-primary btn-round"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="btn btn-primary btn-round"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="btn btn-primary btn-round"><i class="fab fa-facebook-square"></i></a>
+                                    </div>
+                                </div><!-- /.col-lg-4 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.team-members -->
+                    </div><!-- /.container -->
                 </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             th:src="@{images/instructor_jt.jpg}"
-                             class="img-circle"/>
-                        <div class="small course-author-name">
-                            John Thompson
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            $99
+            </div>
+    
+            <div class="section section-contact-us text-center">
+                <div class="container">
+    
+                    <div class="contact">
+                        <h2 class="title">Vrei sa afli mai multe?</h2>
+                        <p class="description">Abonează-te pentru mai multe detalii!</p>
+    
+                        <div class="contact-form">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 ml-auto mr-auto">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Nume" aria-label="Name" aria-describedby="basic-addon1" />
+                                    </div>
+    
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon2"><i class="fas fa-at"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" />
+                                    </div>
+    
+                                    <div class="send-button">
+                                        <button type="button" class="btn btn-primary">Abonare</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a data-role="course-box-link" href="product.html" th:href="@{/product/5}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/SpringCoreAdvancedThumb.png"
-                                     th:src="@{images/SpringCoreAdvancedThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Spring Core Advanced
-                            </div>
-                            <div class="course-listing-subtitle">
-                                Advanced Topics of Spring Core
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             th:src="@{images/instructor_jt.jpg}"
-                             class="img-circle"/>
-                        <div class="small course-author-name">
-                            John Thompson
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            $99
-                        </div>
+    
+            <div class="section section-copyright text-center">
+                <div class="container">
+                    <div class="row">
+                        <!--<p>&copy; Company 2017-2018</p>-->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row course-list list" th:remove="all">
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a data-role="course-box-link" href="product.html" th:href="@{/product/6}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/SpringCoreDevOpsThumb.png"
-                                     th:src="@{images/SpringCoreDevOpsThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Spring Core Dev Ops
-                            </div>
-                            <div class="course-listing-subtitle">
-                                Managing and Deploying Spring Applications in the Enterprise
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             th:src="@{images/instructor_jt.jpg}"
-                             class="img-circle"/>
-                        <div class="small course-author-name">
-                            John Thompson
-                        </div>
-
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            $15
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a data-role="course-box-link" href="product.html" th:href="@{/product/2}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/SpringCoreUltimateThumb.png"
-                                     th:src="@{images/SpringCoreUltimateThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Spring Core Ultimate
-                            </div>
-                            <div class="course-listing-subtitle">
-                                The Ulitmate Bundle of my Spring Courses
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <div class="small course-bundle">
-                            5 Course Bundle
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            $147
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="course-listing">
-                <div class="row">
-                    <a data-role="course-box-link" href="product.html" th:href="@{/product/3}">
-                        <div class="col-lg-12">
-                            <div class="course-box-image-container">
-                                <img role="presentation"
-                                     src="../static/images/ThymeleafThumb.png"
-                                     th:src="@{images/ThymeleafThumb.png}"
-                                     class="course-box-image"/>
-                            </div>
-                            <div class="course-listing-title">
-                                Thymeleaf
-                            </div>
-                            <div class="course-listing-subtitle">
-                                Rocking out Thymeleaf with Spring
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row course-listing-extra-info col-xs-12">
-                    <div class="col-xs-8">
-                        <img align="left" alt="John Thompson"
-                             src="../static/images/instructor_jt.jpg"
-                             th:src="@{images/instructor_jt.jpg}"
-                             class="img-circle"/>
-                        <div class="small course-author-name">
-                            John Thompson
-                        </div>
-
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="small course-price">
-                            $15
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container" th:replace="fragments/footer :: footer">
-    <p>footer</p>
-</div>
-
-</body>
+        </main>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    </body>
 </html>

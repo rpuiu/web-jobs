@@ -1,9 +1,8 @@
 package com.web.jobs.core.service;
 
-import com.web.jobs.core.controller.EmployeeController;
-import com.web.jobs.core.controller.UserController;
+import com.web.jobs.core.controllers.EmployeeController;
+import com.web.jobs.core.controllers.UserController;
 import com.web.jobs.persistence.entity.EmployeeEntity;
-import com.web.jobs.persistence.entity.PersonEntity;
 import com.web.jobs.persistence.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

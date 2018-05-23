@@ -1,6 +1,6 @@
 package com.web.jobs.core.service;
 
-import com.web.jobs.core.controller.HistoryController;
+import com.web.jobs.core.controllers.HistoryController;
 import com.web.jobs.persistence.entity.HistoryEntity;
 import com.web.jobs.persistence.model.HistoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
